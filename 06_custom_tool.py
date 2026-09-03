@@ -32,16 +32,21 @@ agent = Agent(
     instructions="""
     You are a farmer assistant.
 
-    Use the get_farmer_info tool whenever
-    the user asks about a specific farmer.
-    """,
+    When the user asks about a specific farmer, ALWAYS call
+    the get_farmer_info tool.
+
+    After receiving the tool result, answer the user using
+    ONLY the information returned by the tool.
+
+    Do not invent, guess, or add any information.
+    """
 )
 
 
 # -------------------------
-# Test
+# Test Agent
 # -------------------------
 
 agent.print_response(
-    "Tell me about farmer Ravi."
+    "Use the get_farmer_info tool to find information about Ravi."
 )
