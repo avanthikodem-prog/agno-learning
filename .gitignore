@@ -1,6 +1,19 @@
+# Virtual environment
 .venv/
+
+# Python cache
 __pycache__/
 *.pyc
+
+# Environment variables / secrets
 .env
+
+# Agno local databases
 sessions.db
 memory.db
+
+# ChromaDB local database
+tmp/
+
+# VS Code
+.vscode/
