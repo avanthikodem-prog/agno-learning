@@ -30,10 +30,11 @@ agent_os = AgentOS(
     db=db,
     scheduler=True,
     scheduler_poll_interval=15,
+    mcp=True,
 )
 
 
-# Get the FastAPI application
+# Get FastAPI application
 app = agent_os.get_app()
 
 
