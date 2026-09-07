@@ -1,6 +1,13 @@
 from agno.agent import Agent
 from agno.models.ollama import Ollama
 from agno.os import AgentOS
+from agno.db.sqlite import SqliteDb
+
+
+# Create the database
+db = SqliteDb(
+    db_file="sessions.db"
+)
 
 
 # Create the agent
@@ -20,6 +27,9 @@ farmer_agent = Agent(
 agent_os = AgentOS(
     name="GramSwaram Agent Platform",
     agents=[farmer_agent],
+    db=db,
+    scheduler=True,
+    scheduler_poll_interval=15,
 )
 
 
