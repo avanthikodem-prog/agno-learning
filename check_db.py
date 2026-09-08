@@ -10,4 +10,4 @@ rows = connection.execute(
 for row in rows:
     print(row)
 
-connection.close()
+connection.close() this is check_db.py
