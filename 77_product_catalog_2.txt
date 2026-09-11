@@ -1,0 +1,8 @@
+GramSwaram Product Catalog - Village B
+
+Product | Price | Category | Availability
+Dal | ₹180 | Grocery | Available
+Corn Seeds | 650 | Agriculture | Available
+Pesticide | ₹900 | Agriculture | Available
+Sugar | 120 | Grocery | Available
+Water Pump | ₹2,500 | Equipment | Out of Stock

@@ -1,0 +1,68 @@
+{
+    "generated_at": "2026-09-11T09:58:20.591443+00:00",
+    "system": {
+        "name": "GramSwaram Document Processing System",
+        "status": "CRITICAL"
+    },
+    "processing_summary": {
+        "total_documents": 3,
+        "new_documents": 2,
+        "changed_documents": 0,
+        "unchanged_documents": 0,
+        "successful_documents": 2,
+        "failed_documents": 1
+    },
+    "performance": {
+        "success_rate_percent": 66.66666666666666,
+        "failure_rate_percent": 33.33333333333333
+    },
+    "business_data": {
+        "total_products": 10,
+        "total_value": 8020.0,
+        "available_products": 8,
+        "out_of_stock_products": 2
+    },
+    "alerts": {
+        "total_alerts": 1,
+        "critical_alerts": 1,
+        "warning_alerts": 0,
+        "info_alerts": 0,
+        "details": [
+            {
+                "severity": "CRITICAL",
+                "alert_type": "HIGH_FAILURE_RATE",
+                "message": "Critical document processing failure rate detected.",
+                "value": 33.33333333333333,
+                "threshold": 20.0
+            }
+        ]
+    },
+    "audit": {
+        "total_audit_events": 3
+    },
+    "documents": [
+        {
+            "document": "77_product_catalog_1.txt",
+            "status": "NEW",
+            "version": 1,
+            "product_count": 5,
+            "total_value": 3670.0,
+            "available_count": 4,
+            "out_of_stock_count": 1
+        },
+        {
+            "document": "77_product_catalog_2.txt",
+            "status": "NEW",
+            "version": 1,
+            "product_count": 5,
+            "total_value": 4350.0,
+            "available_count": 4,
+            "out_of_stock_count": 1
+        },
+        {
+            "document": "78_invalid_catalog.txt",
+            "status": "FAILED",
+            "reason": "Missing required column(s): Product, Price, Category, Availability"
+        }
+    ]
+}

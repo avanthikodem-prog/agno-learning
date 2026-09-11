@@ -1,0 +1,8 @@
+GramSwaram Product Catalog - Village A
+
+Product | Price | Category | Availability
+Rice | ₹570 | Grocery | Available
+Wheat Seeds | 800 | Agriculture | Available
+Fertilizer | ₹1,200 | Agriculture | Available
+Cooking Oil | 150 | Grocery | Out of Stock
+Farm Tools | 950 | Agriculture | Available

@@ -1,0 +1,44 @@
+{
+    "documents": {
+        "77_product_catalog_1.txt": {
+            "current_hash": "eedc551e9f0be1a4c508bce6536909a81a80c3bcf7f98c406d35105120b2c588",
+            "current_version": 1
+        },
+        "77_product_catalog_2.txt": {
+            "current_hash": "583398471424165c4c095965ae449545d5d4e9fa9944de52477526c56b546547",
+            "current_version": 1
+        }
+    },
+    "audit_events": [
+        {
+            "timestamp": "2026-09-11T09:58:20.586536+00:00",
+            "document": "77_product_catalog_1.txt",
+            "event_type": "DOCUMENT_CREATED",
+            "status": "SUCCESS",
+            "version": 1,
+            "previous_hash": null,
+            "current_hash": "eedc551e9f0be1a4c508bce6536909a81a80c3bcf7f98c406d35105120b2c588",
+            "details": "First version processed successfully."
+        },
+        {
+            "timestamp": "2026-09-11T09:58:20.587904+00:00",
+            "document": "77_product_catalog_2.txt",
+            "event_type": "DOCUMENT_CREATED",
+            "status": "SUCCESS",
+            "version": 1,
+            "previous_hash": null,
+            "current_hash": "583398471424165c4c095965ae449545d5d4e9fa9944de52477526c56b546547",
+            "details": "First version processed successfully."
+        },
+        {
+            "timestamp": "2026-09-11T09:58:20.589019+00:00",
+            "document": "78_invalid_catalog.txt",
+            "event_type": "PROCESSING_FAILED",
+            "status": "FAILED",
+            "version": 0,
+            "previous_hash": null,
+            "current_hash": "ae7003245fae9f8958f6e649a325c873ace4a2efc0359f785e1f0a0db70978b7",
+            "details": "Missing required column(s): Product, Price, Category, Availability"
+        }
+    ]
+}

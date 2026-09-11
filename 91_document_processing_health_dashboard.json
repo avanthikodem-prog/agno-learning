@@ -1,0 +1,33 @@
+{
+    "generated_at": "2026-09-11T09:49:40.537491+00:00",
+    "dashboard": {
+        "status": "HEALTHY",
+        "system_health": "HEALTHY",
+        "document_metrics": {
+            "total_documents": 2,
+            "total_events": 2,
+            "successful_events": 2,
+            "failed_events": 0
+        },
+        "event_breakdown": {
+            "created": 2,
+            "changed": 0,
+            "checked": 0
+        },
+        "performance": {
+            "success_rate_percent": 100.0,
+            "failure_rate_percent": 0.0,
+            "change_rate_percent": 0.0
+        },
+        "alert_rules": {
+            "total_rules": 5,
+            "triggered_rules": 0,
+            "passed_rules": 5,
+            "critical_triggered": 0,
+            "warning_triggered": 0
+        },
+        "recommendations": [
+            "Continue normal document processing monitoring."
+        ]
+    }
+}

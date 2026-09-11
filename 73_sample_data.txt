@@ -1,0 +1,8 @@
+GramSwaram Product Catalog
+
+Product | Price | Category | Availability
+rice | ₹500 | grocery | available
+WHEAT SEEDS | 800 | AGRICULTURE | Available
+ fertilizer  | ₹1,200 | Agriculture | AVAILABLE
+Cooking Oil | 150 | GROCERY | out of stock
+Farm Tools |  950  | agriculture | Available

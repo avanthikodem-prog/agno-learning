@@ -1,0 +1,72 @@
+{
+    "generated_at": "2026-09-11T09:48:19.813702+00:00",
+    "source": "88_document_processing_monitoring.json",
+    "metrics": {
+        "total_documents": 2,
+        "total_events": 2,
+        "failed_events": 0,
+        "failure_rate_percent": 0.0,
+        "change_rate_percent": 0.0,
+        "success_rate_percent": 100.0
+    },
+    "total_rules": 5,
+    "triggered_rules": 0,
+    "passed_rules": 5,
+    "rules": [
+        {
+            "rule_id": "RULE-001",
+            "rule_name": "High Failure Rate",
+            "metric": "failure_rate_percent",
+            "operator": ">=",
+            "threshold": 20.0,
+            "actual_value": 0.0,
+            "severity": "CRITICAL",
+            "triggered": false,
+            "message": "Critical document processing failure rate detected."
+        },
+        {
+            "rule_id": "RULE-002",
+            "rule_name": "Elevated Failure Rate",
+            "metric": "failure_rate_percent",
+            "operator": ">=",
+            "threshold": 10.0,
+            "actual_value": 0.0,
+            "severity": "WARNING",
+            "triggered": false,
+            "message": "Document processing failure rate is elevated."
+        },
+        {
+            "rule_id": "RULE-003",
+            "rule_name": "Processing Failures",
+            "metric": "failed_events",
+            "operator": ">",
+            "threshold": 0,
+            "actual_value": 0,
+            "severity": "WARNING",
+            "triggered": false,
+            "message": "One or more document processing failures detected."
+        },
+        {
+            "rule_id": "RULE-004",
+            "rule_name": "High Document Change Rate",
+            "metric": "change_rate_percent",
+            "operator": ">=",
+            "threshold": 30.0,
+            "actual_value": 0.0,
+            "severity": "WARNING",
+            "triggered": false,
+            "message": "Document change rate is unusually high."
+        },
+        {
+            "rule_id": "RULE-005",
+            "rule_name": "No Processing Events",
+            "metric": "total_events",
+            "operator": "==",
+            "threshold": 0,
+            "actual_value": 2,
+            "severity": "CRITICAL",
+            "triggered": false,
+            "message": "No document processing events were recorded."
+        }
+    ]
+}

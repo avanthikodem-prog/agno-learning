@@ -1,0 +1,4 @@
+GramSwaram Product Catalog - Invalid
+
+Product | Price | Category
+Broken Product | ₹500 | Grocery

@@ -1,0 +1,108 @@
+{
+    "pipeline": "GramSwaram Batch Processing with Error Isolation",
+    "successful_documents": [
+        {
+            "document": "77_product_catalog_1.txt",
+            "status": "SUCCESS",
+            "products": [
+                {
+                    "product": "Rice",
+                    "price": 500.0,
+                    "category": "Grocery",
+                    "availability": "Available"
+                },
+                {
+                    "product": "Wheat Seeds",
+                    "price": 800.0,
+                    "category": "Agriculture",
+                    "availability": "Available"
+                },
+                {
+                    "product": "Fertilizer",
+                    "price": 1200.0,
+                    "category": "Agriculture",
+                    "availability": "Available"
+                },
+                {
+                    "product": "Cooking Oil",
+                    "price": 150.0,
+                    "category": "Grocery",
+                    "availability": "Out of Stock"
+                },
+                {
+                    "product": "Farm Tools",
+                    "price": 950.0,
+                    "category": "Agriculture",
+                    "availability": "Available"
+                }
+            ],
+            "summary": {
+                "total_products": 5,
+                "total_value": 3600.0,
+                "average_price": 720.0,
+                "available_products": 4,
+                "out_of_stock_products": 1
+            }
+        },
+        {
+            "document": "77_product_catalog_2.txt",
+            "status": "SUCCESS",
+            "products": [
+                {
+                    "product": "Dal",
+                    "price": 180.0,
+                    "category": "Grocery",
+                    "availability": "Available"
+                },
+                {
+                    "product": "Corn Seeds",
+                    "price": 650.0,
+                    "category": "Agriculture",
+                    "availability": "Available"
+                },
+                {
+                    "product": "Pesticide",
+                    "price": 900.0,
+                    "category": "Agriculture",
+                    "availability": "Available"
+                },
+                {
+                    "product": "Sugar",
+                    "price": 120.0,
+                    "category": "Grocery",
+                    "availability": "Available"
+                },
+                {
+                    "product": "Water Pump",
+                    "price": 2500.0,
+                    "category": "Equipment",
+                    "availability": "Out of Stock"
+                }
+            ],
+            "summary": {
+                "total_products": 5,
+                "total_value": 4350.0,
+                "average_price": 870.0,
+                "available_products": 4,
+                "out_of_stock_products": 1
+            }
+        }
+    ],
+    "failed_documents": [
+        {
+            "document": "78_invalid_catalog.txt",
+            "status": "FAILED",
+            "error": "Missing required column: Availability"
+        }
+    ],
+    "batch_summary": {
+        "total_documents": 3,
+        "successful_documents": 2,
+        "failed_documents": 1,
+        "total_products_from_successful_documents": 10,
+        "total_value_from_successful_documents": 7950.0,
+        "available_products": 8,
+        "out_of_stock_products": 2
+    },
+    "status": "COMPLETED_WITH_ISOLATION"
+}

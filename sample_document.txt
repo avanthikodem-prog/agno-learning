@@ -1,0 +1,9 @@
+GramSwaram is an AI-powered voice commerce platform designed for rural communities.
+
+The platform aims to help users buy and sell products using voice commands in local languages.
+
+Farmers and rural customers can interact with the system using natural language instead of typing.
+
+The system can process user requests, identify the required action, and provide an appropriate response.
+
+The goal is to make digital commerce easier and more accessible for users who may have difficulty with traditional text-based applications.

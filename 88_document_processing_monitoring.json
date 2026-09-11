@@ -1,0 +1,17 @@
+{
+    "monitoring": {
+        "system_health": "HEALTHY",
+        "metrics": {
+            "total_documents": 2,
+            "total_events": 2,
+            "created_events": 2,
+            "changed_events": 0,
+            "checked_events": 0,
+            "failed_events": 0,
+            "successful_events": 2,
+            "success_rate_percent": 100.0,
+            "failure_rate_percent": 0.0,
+            "change_rate_percent": 0.0
+        }
+    }
+}

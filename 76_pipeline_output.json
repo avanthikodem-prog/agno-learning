@@ -1,0 +1,54 @@
+{
+    "pipeline": "GramSwaram Document Processing Pipeline",
+    "source_document": "73_sample_data.txt",
+    "products": [
+        {
+            "product": "Rice",
+            "price": 500.0,
+            "category": "Grocery",
+            "availability": "Available"
+        },
+        {
+            "product": "Wheat Seeds",
+            "price": 800.0,
+            "category": "Agriculture",
+            "availability": "Available"
+        },
+        {
+            "product": "Fertilizer",
+            "price": 1200.0,
+            "category": "Agriculture",
+            "availability": "Available"
+        },
+        {
+            "product": "Cooking Oil",
+            "price": 150.0,
+            "category": "Grocery",
+            "availability": "Out of Stock"
+        },
+        {
+            "product": "Farm Tools",
+            "price": 950.0,
+            "category": "Agriculture",
+            "availability": "Available"
+        }
+    ],
+    "summary": {
+        "total_products": 5,
+        "total_value": 3600.0,
+        "average_price": 720.0,
+        "available_products": 4,
+        "out_of_stock_products": 1,
+        "agriculture_products": 3,
+        "grocery_products": 2,
+        "highest_priced_product": {
+            "product": "Fertilizer",
+            "price": 1200.0
+        },
+        "lowest_priced_product": {
+            "product": "Cooking Oil",
+            "price": 150.0
+        }
+    },
+    "status": "SUCCESS"
+}

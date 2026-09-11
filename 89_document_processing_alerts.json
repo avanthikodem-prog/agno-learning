@@ -1,0 +1,20 @@
+{
+    "generated_at": "2026-09-11T09:46:57.206312+00:00",
+    "source": "88_document_processing_monitoring.json",
+    "system_health": "HEALTHY",
+    "total_alerts": 1,
+    "critical_alerts": 0,
+    "warning_alerts": 0,
+    "info_alerts": 1,
+    "alerts": [
+        {
+            "timestamp": "2026-09-11T09:46:57.206143+00:00",
+            "severity": "INFO",
+            "alert_type": "SYSTEM_HEALTH_HEALTHY",
+            "message": "Document processing system is operating normally.",
+            "metric": "failure_rate_percent",
+            "value": 0.0,
+            "threshold": 10.0
+        }
+    ]
+}

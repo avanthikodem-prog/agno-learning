@@ -1,0 +1,50 @@
+[
+  {
+    "chunk_id": 1,
+    "start": 0,
+    "end": 120,
+    "text": "GramSwaram is an AI-powered voice commerce platform designed for rural communities.\nThe platform aims to help users buy",
+    "characters": 119,
+    "words": 18
+  },
+  {
+    "chunk_id": 2,
+    "start": 90,
+    "end": 210,
+    "text": "atform aims to help users buy and sell products using voice commands in local languages.\nFarmers and rural customers can",
+    "characters": 120,
+    "words": 20
+  },
+  {
+    "chunk_id": 3,
+    "start": 180,
+    "end": 300,
+    "text": "armers and rural customers can interact with the system using natural language instead of typing.\nThe system can process",
+    "characters": 120,
+    "words": 19
+  },
+  {
+    "chunk_id": 4,
+    "start": 270,
+    "end": 390,
+    "text": "typing.\nThe system can process user requests, identify the required action, and provide an appropriate response.\nThe goa",
+    "characters": 120,
+    "words": 18
+  },
+  {
+    "chunk_id": 5,
+    "start": 360,
+    "end": 480,
+    "text": "appropriate response.\nThe goal is to make digital commerce easier and more accessible for users who may have difficulty",
+    "characters": 119,
+    "words": 19
+  },
+  {
+    "chunk_id": 6,
+    "start": 450,
+    "end": 522,
+    "text": "users who may have difficulty with traditional text-based applications.",
+    "characters": 71,
+    "words": 9
+  }
+]
