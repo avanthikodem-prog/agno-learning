@@ -102,15 +102,14 @@ vector_db = ChromaDb(
 
 knowledge = Knowledge(
     name="Farmer Knowledge",
-    description="Knowledge about farmers, crops and farming practices.",
+    description="Knowledge about farmers, crops, farming practices, RAG and AI concepts.",
     vector_db=vector_db,
 )
 
 
-# IMPORTANT:
-# Use text_content= exactly.
-# This is the syntax from your working 10_knowledge_rag.py.
-
+# ============================================================
+# FARMER KNOWLEDGE
+# ============================================================
 
 knowledge.insert(
     name="Ravi Farmer Information",
@@ -135,11 +134,44 @@ knowledge.insert(
 
 
 # ============================================================
+# RAG AND FINE-TUNING KNOWLEDGE
+# ============================================================
+
+knowledge.insert(
+    name="RAG and Fine-tuning Explanation",
+    text_content="""
+    RAG stands for Retrieval-Augmented Generation.
+
+    RAG is a technique where an AI system retrieves relevant information
+    from an external knowledge base and provides that information to the
+    language model before generating an answer.
+
+    RAG allows an AI system to use updated or domain-specific information
+    without retraining the language model.
+
+    Fine-tuning is different from RAG.
+
+    Fine-tuning means training a pre-trained language model further on
+    a specific dataset so that the model learns task-specific patterns,
+    behavior, or knowledge.
+
+    RAG retrieves information at query time from an external knowledge
+    source.
+
+    Fine-tuning changes the model through additional training.
+
+    RAG and fine-tuning can also be used together.
+    They solve different problems and are not the same technique.
+    """,
+)
+
+
+# ============================================================
 # 5. GUARDRAIL
 # ============================================================
 
 guardrail = PromptInjectionGuardrail(
-    patterns=[
+    injection_patterns=[
         "ignore previous instructions",
         "ignore all previous instructions",
         "reveal system prompt",
@@ -176,9 +208,7 @@ farmer_agent = Agent(
 
     add_knowledge_to_context=True,
 
-    guardrails=[
-        guardrail
-    ],
+    pre_hooks=[guardrail],
 
     instructions=[
         "You are an agriculture assistant.",
@@ -295,11 +325,6 @@ workflow = AgricultureWorkflow()
 # 10. EXPLICIT USER MEMORY
 # ============================================================
 
-# Simple dictionary-based memory.
-#
-# This memory exists only while the Python program is running.
-# Later we can replace this with PostgreSQL.
-
 user_memory = {}
 
 
@@ -349,9 +374,6 @@ def build_memory_context(
 # ============================================================
 # 11. MEMORY AGENT
 # ============================================================
-
-# This agent has NO tools.
-# This prevents HITL from interfering with memory testing.
 
 memory_agent = Agent(
     name="GramSwaram Memory Agent",
@@ -634,7 +656,25 @@ def memory_test():
 
 
 # ============================================================
-# 19. MAIN PROGRAM
+# 19. TEST 8 — RAG / RAG VS FINE-TUNING
+# ============================================================
+
+def rag_finetuning_test():
+
+    print("\n" + "=" * 60)
+    print("TEST 8 — RAG VS FINE-TUNING")
+    print("=" * 60)
+
+    response = farmer_agent.run(
+        "What is RAG and how is it different from fine-tuning?"
+    )
+
+    print("\nAgent:")
+    print(response.content)
+
+
+# ============================================================
+# 20. MAIN PROGRAM
 # ============================================================
 
 if __name__ == "__main__":
@@ -671,6 +711,10 @@ if __name__ == "__main__":
 
     # TEST 7
     memory_test()
+
+
+    # TEST 8
+    rag_finetuning_test()
 
 
     print("\n" + "=" * 60)
