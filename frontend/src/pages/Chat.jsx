@@ -36,40 +36,79 @@ function Chat() {
     setMessage("");
     setLoading(true);
 
+    // Create an empty assistant message.
+    // Streaming chunks will appear inside this message.
+    setMessages((previousMessages) => [
+      ...previousMessages,
+      {
+        sender: "assistant",
+        text: "",
+      },
+    ]);
+
     try {
+      let streamedResponse = "";
+
       const response = await sendChatMessage(
         trimmedMessage,
-        sessionId
+        sessionId,
+        (chunk) => {
+          streamedResponse += chunk;
+
+          setMessages((previousMessages) => {
+            const updatedMessages = [...previousMessages];
+
+            const lastMessageIndex =
+              updatedMessages.length - 1;
+
+            updatedMessages[lastMessageIndex] = {
+              sender: "assistant",
+              text: streamedResponse,
+            };
+
+            return updatedMessages;
+          });
+        }
       );
 
-      const assistantMessage = {
-        sender: "assistant",
-        text:
-          response.content ||
-          "The AI assistant returned an empty response.",
-      };
+      // Fallback if no streaming content was received.
+      if (!streamedResponse && response.content) {
+        setMessages((previousMessages) => {
+          const updatedMessages = [...previousMessages];
 
-      setMessages((previousMessages) => [
-        ...previousMessages,
-        assistantMessage,
-      ]);
+          const lastMessageIndex =
+            updatedMessages.length - 1;
 
+          updatedMessages[lastMessageIndex] = {
+            sender: "assistant",
+            text: response.content,
+          };
+
+          return updatedMessages;
+        });
+      }
+
+      // Save the session ID.
       if (response.session_id) {
         setSessionId(response.session_id);
       }
     } catch (error) {
       console.error("Chat request failed:", error);
 
-      const errorMessage = {
-        sender: "assistant",
-        text:
-          "Sorry, I could not connect to the AI assistant. Please check that the AgentOS backend is running.",
-      };
+      setMessages((previousMessages) => {
+        const updatedMessages = [...previousMessages];
 
-      setMessages((previousMessages) => [
-        ...previousMessages,
-        errorMessage,
-      ]);
+        const lastMessageIndex =
+          updatedMessages.length - 1;
+
+        updatedMessages[lastMessageIndex] = {
+          sender: "assistant",
+          text:
+            "Sorry, I could not connect to the AI assistant. Please check that the AgentOS backend is running.",
+        };
+
+        return updatedMessages;
+      });
     } finally {
       setLoading(false);
     }
@@ -143,16 +182,6 @@ function Chat() {
                 </div>
               </div>
             ))}
-
-            {loading && (
-              <div className="message assistant-message">
-                <strong>AI Assistant</strong>
-
-                <div className="message-content">
-                  <p>Thinking... 🤖</p>
-                </div>
-              </div>
-            )}
           </div>
 
           <div className="chat-input-area">

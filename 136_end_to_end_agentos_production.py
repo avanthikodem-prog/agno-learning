@@ -196,7 +196,7 @@ try:
             api_key=OLLAMA_API_KEY,
             timeout=120,
             options={
-                "num_predict": 128,
+                "num_predict": 256,
             },
         )
 
